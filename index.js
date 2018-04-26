@@ -10,3 +10,5 @@ console.log(process.argv)
 process.argv.forEach((process,i,arr)=>{
   console.log(`${i}: ${process}`)
 })
+
+process.argv[2]==='init' ? console.log("hi there") : console.log("nope")
