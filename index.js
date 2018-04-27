@@ -2,9 +2,9 @@
 // Check for the first process argument to be init x
 // If the first argument is init continue processing x
 // Use readline to ask for 5 inputs x
-// Create a string that is a json object 
-// The key values should be the inputs you get from the user
-// Save this json to a file called package.json
+// Create a string that is a json object x
+// The key values should be the inputs you get from the user x
+// Save this json to a file called package.json x
 const readline = require('readline');
 const fs = require('fs');
 
@@ -28,9 +28,9 @@ process.argv[2]==='init'
                   'entertainment' : answer5
                 }
                 const obj = JSON.stringify(response)
-                fs.writeFile('message.json', obj, (err) => {
+                fs.writeFile('package.json', obj, (err) => {
                   if (err) throw err;
-                  console.log('The file has been saved!');
+                  console.log('A new package.json file has been saved');
                 });
                 rl.close()
               })
