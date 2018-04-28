@@ -1,19 +1,7 @@
 {
-  "name": "acapm",
-  "version": "1.0.0",
-  "description": "* Create a node program * Check for the first process argument to be init * If the first argument is init continue processing * Use readline to ask for 5 inputs * Create a string that is a json object * The key values should be the inputs you get from the user * Save this json to a file called package.json",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wc0sby/acapm.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wc0sby/acapm/issues"
-  },
-  "homepage": "https://github.com/wc0sby/acapm#readme"
+	"name": "myApp",
+	"description": "Something kind of dumb, but kind of cool",
+	"version": "1.0.0",
+	"author": "Wade",
+	"main": "index.js"
 }
