@@ -1,6 +1,6 @@
 {
 	"name": "myApp",
-	"description": "Something kind of dumb, but kind of cool",
+	"description": "Something kind of cool",
 	"version": "1.0.0",
 	"author": "Wade",
 	"main": "index.js"
