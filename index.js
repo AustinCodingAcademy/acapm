@@ -12,17 +12,17 @@ process.argv[2] === 'init'
             rl.question('Description? ', (answer3) => {
                 rl.question('Author? ', (answer4) => {
                     rl.question('Keywords? ', (answer5) => {
-                        const response = {
+                        const answers = {
                             'name':  answer1,
                             'version': answer2,
                             'description': answer3,
                             'author': answer4,
                             'keywords': answer5
                         }
-                        const obj = JSON.stringify(response, '', '\t')
-                        fs.writeFile('package.json', obj, (err) => {
+                        const jsonObj = JSON.stringify(answers, '', '\t')
+                        fs.writeFile('package.json', jsonObj, (err) => {
                             if (err) throw err;
-                            console.log('A new package.json file has been created.  Have a nice day!')
+                            console.log("A new 'package.json' file has been created.  Have a nice day!")
                         });
                         rl.close();
                     })
