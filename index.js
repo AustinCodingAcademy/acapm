@@ -13,19 +13,20 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+console.log(process.argv)
 
 process.argv[2]==='init' 
-    ? (rl.question(`App name? `, (answer1) => {
-        rl.question(`Description? `, (answer2) => {
-          rl.question(`Release version? `, (answer3) => {
-            rl.question(`Author? `, (answer4) => {
-              rl.question(`Main file path? `, (answer5) => {
+    ? (rl.question(`App name? `, (name) => {
+        rl.question(`Description? `, (desc) => {
+          rl.question(`Release version? `, (version) => {
+            rl.question(`Author? `, (author) => {
+              rl.question(`Main file path? `, (main) => {
                 const response = {
-                  'name' : answer1,  
-                  'description' : answer2, 
-                  'version' : answer3,
-                  'author' : answer4,
-                  'main' : answer5
+                  'name' : name,  
+                  'description' : desc, 
+                  'version' : version,
+                  'author' : author,
+                  'main' : main
                 }
                 const obj = JSON.stringify(response, '', '\t')
                 fs.writeFile('package.json', obj, (err) => {
