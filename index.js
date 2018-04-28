@@ -15,19 +15,19 @@ const rl = readline.createInterface({
 
 
 process.argv[2]==='init' 
-    ? (rl.question(`What is your yearly income? `, (answer1) => {
-        rl.question(`How much do you spend on groceries? `, (answer2) => {
-          rl.question(`How much do you spend on gas? `, (answer3) => {
-            rl.question(`How much do you spend on rent? `, (answer4) => {
-              rl.question(`How much do you spend on entertainment? `, (answer5) => {
+    ? (rl.question(`App name? `, (answer1) => {
+        rl.question(`Description? `, (answer2) => {
+          rl.question(`Release version? `, (answer3) => {
+            rl.question(`Author? `, (answer4) => {
+              rl.question(`Main file path? `, (answer5) => {
                 const response = {
-                  'salary' : answer1, 
-                  'groceries' : answer2, 
-                  'gas' : answer3,
-                  'rent' : answer4,
-                  'entertainment' : answer5
+                  'name' : answer1,  
+                  'description' : answer2, 
+                  'version' : answer3,
+                  'author' : answer4,
+                  'main' : answer5
                 }
-                const obj = JSON.stringify(response)
+                const obj = JSON.stringify(response, '', '\t')
                 fs.writeFile('package.json', obj, (err) => {
                   if (err) throw err;
                   console.log('A new package.json file has been saved');
