@@ -11,7 +11,7 @@
         "console": "integratedTerminal",
         "args": [
             "init", "install", "stuff"
-        ]
+        ],
         "program": "${workspaceFolder}/index.js"
     },
     ]
