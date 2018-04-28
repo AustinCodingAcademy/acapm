@@ -44,7 +44,7 @@ process.argv[2]==='init'
         })
     })
     )
-: console.log("Did you mean to put input init? \n \n try: \t node. index.js init")
+: console.log("Did you mean to put input init? \n \n try: \t node index.js init")
 
     // rl.question('What do you think of Node.js? ', (answer) => {
     //   // TODO: Log the answer in a database
