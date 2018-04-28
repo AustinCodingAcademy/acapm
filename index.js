@@ -7,10 +7,10 @@ const rl = readline.createInterface({
   });
   
 process.argv[2] === 'init'
-    ? (rl.question('Name?', (answer1) => {
-        rl.question('Version?', (answer2) => {
-            rl.question('Description?', (answer3) => {
-                rl.question('Author?', (answer4) => {
+    ? (rl.question('Package Name? ', (answer1) => { rl.write('1.0.0')
+        rl.question('Version? ', (answer2) => {
+            rl.question('Description? ', (answer3) => {
+                rl.question('Author? ', (answer4) => {
                     rl.question('Keywords? ', (answer5) => {
                         const response = {
                             'name':  answer1,
