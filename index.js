@@ -46,8 +46,7 @@ const createPrompts =()=> {
             });
         });
 }
-
-
+                            
 if(process.argv[2] === "init"){
     createPrompts();
 }
