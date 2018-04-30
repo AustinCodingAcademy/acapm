@@ -1,5 +1,3 @@
-
-
 let jsonObject = {
     'name': '',
     'age': '',
@@ -8,17 +6,17 @@ let jsonObject = {
     'meaningOfLife': '',
 }
 
-const createJson =(jsonObject)=> {
-   
+const createJson = (jsonObject) => {
+
     var fs = require('fs');
     fs.writeFile("package.json", JSON.stringify(jsonObject), (err) => {
-       if (err) throw err;
-   
+        if (err) throw err;
+
     });
 }
 
 
-const createPrompts =()=> {
+const createPrompts = () => {
 
     const readline = require('readline');
 
@@ -38,17 +36,15 @@ const createPrompts =()=> {
                     jsonObject.favoriteAuthor = answer
                     rl.question('What is the meaning of life? ', (answer) => {
                         jsonObject.meaningOfLife = answer
-                            createJson(jsonObject);
-                            rl.close();
-                        });
+                        createJson(jsonObject);
+                        rl.close();
                     });
                 });
             });
         });
-}
-                            
-if(process.argv[2] === "init"){
-    createPrompts();
+    });
 }
 
-   
+if (process.argv[2] === "init") {
+    createPrompts();
+}
