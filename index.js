@@ -24,7 +24,7 @@ const createPrompts = () => {
         input: process.stdin,
         output: process.stdout
     });
-
+//fs.createReadStream????...input.prompt()?????...rl.write()???....rl.on()????...some ideas of methods to eliminate need for hardcoded readlines
 
     rl.question('What is your name? ', (answer) => {
         jsonObject.name = answer
