@@ -21,3 +21,14 @@ if(process.argv[2] === "init"){
         });
    });   
 }
+
+//still need to get the inputs in an object, currently just in a string
+//function getPrompt()
+//make a recursive function - a function that calls itself
+
+// const getPrompt = () => {
+//     rl.question('tell me something about yourself', (anser) => {
+//         myJsonData['fact'] = answer;
+//         getPrompt();
+//     })
+// }
