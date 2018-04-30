@@ -28,7 +28,7 @@ if(process.argv[2] === "init"){
     myJsonData['name'] = answer;
     rl.question("Where are you from? ", (answer) => {
       myJsonData['from'] = answer;
-      rl.question("Where are your favorite color? ", (answer) => {
+      rl.question("What is your favorite color? ", (answer) => {
         myJsonData['color'] = answer;
         rl.question("What is your favorite team? ", (answer) => {
           myJsonData['team'] = answer;
