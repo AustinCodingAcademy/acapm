@@ -49,13 +49,10 @@ const createPrompts =()=> {
                             
 
 
-process.argv.forEach(function (val, index, array) {
-    console.log(index + ': ' + val);
-   });
+
    
-   if(process.argv[2] === "init"){
-    
+if(process.argv[2] === "init"){
     createPrompts();
-   }
+}
 
    
