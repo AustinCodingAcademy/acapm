@@ -27,15 +27,15 @@ if(process.argv[2] === "init"){
   rl.question("What is your name? ", (answer) => {
     myJsonData['name'] = answer;
     rl.question("Where are you from? ", (answer) => {
-      myJsonData['from'] = answer
+      myJsonData['from'] = answer;
       rl.question("Where are your favorite color? ", (answer) => {
-        myJsonData['color'] = answer
+        myJsonData['color'] = answer;
         rl.question("What is your favorite team? ", (answer) => {
-          myJsonData['team'] = answer
+          myJsonData['team'] = answer;
           rl.question("What is your fovorite beer? ", (answer) => {
-            myJsonData['beer'] = answer
+            myJsonData['beer'] = answer;
             rl.close();
-            writeMyJson(JSON.stringify(myJsonData))
+            writeMyJson(JSON.stringify(myJsonData, null, 4));
           });
         });
       });
