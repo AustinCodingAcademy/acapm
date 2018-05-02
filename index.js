@@ -34,13 +34,13 @@ const jsonData = {
 const writeJsonObj = (data) => {
     fs.writeFile("package.json", data, (err) => {
         if(err) throw err;
-        console.log("The file was successfully created")
+        console.log("file created: package.json")
     })
 }
 
 
 const getAnswers = (n) => {
-    if (n<Object.keys(jsonData).length){
+    if (n<=Object.keys(jsonData).length){
         if(process.argv[2]==='init'){
             rl.question(`${Object.keys(jsonData)[n]}: `, (answer)=>{
                 jsonData[Object.keys(jsonData)[1]] = answer;
