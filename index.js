@@ -24,12 +24,14 @@ const rl = readline.createInterface({
 });
 
 const jsonData = {
-    "firstName" : "",
-    "lastName" : "",
-    "emailAddress" : "",
-    "phoneNumber" : "",
-    "whatWant" : "",
+    "name" : "",
+    "package-name" : "",
+    "package-description" : "",
+    "version" : "",
+    "private" : "",
 }
+
+const prompts = ["Name: ", "Name of package: ", "Package description: ", "version: ", "private (true/false): "]
 
 const writeJsonObj = (data) => {
     fs.writeFile("package.json", data, (err) => {
@@ -42,8 +44,8 @@ const writeJsonObj = (data) => {
 const getAnswers = (n) => {
     if (n<=Object.keys(jsonData).length){
         if(process.argv[2]==='init'){
-            rl.question(`${Object.keys(jsonData)[n]}: `, (answer)=>{
-                jsonData[Object.keys(jsonData)[1]] = answer;
+            rl.question(prompts[n], (answer)=>{
+                jsonData[Object.keys(jsonData)[n]] = answer;
                 return getAnswers(n+1)
             })
         } if(n == Object.keys(jsonData).length) {
