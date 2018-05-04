@@ -1,4 +1,5 @@
 const readline = require('readline');
+const fs = require("fs");
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -8,6 +9,14 @@ const rl = readline.createInterface({
    process.argv.forEach(function (val, index, array) {
  console.log(index + ': ' + val);
 });
+
+const userFacts = {
+    "fact one": "this.fact1",
+    "fact two": "this.fact2",
+    "fact three": "this.fact3",
+    "fact four": "this.fact4",
+    "fact five": "this.fact5",   
+}
 
 if(process.argv[2] === "init"){
     //do init stuff
