@@ -27,13 +27,14 @@ const contentOfJson = (facts) => {
     });
 };
 
-
+const askUser = (i) {
 //Check to see if the user has input all entries
-if(i<=Object.keys(userFacts).length {
+if(i<=Object.keys(userFacts).length) {
     if(process.argv[2] === "init"){
 
     }   
-});
+}
+}
 //initialize
 
 //still need to get the inputs in an object, currently just in a string
