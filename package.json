@@ -1,1 +1,7 @@
-"fact 1, fact 2, fact 3, fact 4, fact 5"
+{
+    "fact one": "how about now that I moved the debugger?",
+    "fact two": "yay!",
+    "fact three": "it works",
+    "fact four": "I'm free",
+    "fact five": "maybe I'll get a 40"
+}
