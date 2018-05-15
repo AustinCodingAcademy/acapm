@@ -12,13 +12,15 @@ const rl = readline.createInterface({
  console.log(index + ': ' + val);
 });
 
-const userFacts = (props) => {
-    "fact one": this.props.fact1,
-    "fact two": this.props.fact2,
-    "fact three": this.props.fact3,
-    "fact four": this.props.fact4,
-    "fact five": this.props.fact5,   
+const userFacts = {
+    "fact one" : "",
+    "fact two" : "",
+    "fact three" : "",
+    "fact four" : "",
+    "fact five" : "",   
 };
+
+const userPrompts = {"Fact 1: ", "Fact 2: ", "Fact 3: ", "Fact 4: ", "Fact 5: "}
 
 if(process.argv[2] === "init"){
     //do init stuff
