@@ -1,5 +1,7 @@
 const readline = require('readline');
 const fs = require("fs");
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -10,13 +12,13 @@ const rl = readline.createInterface({
  console.log(index + ': ' + val);
 });
 
-const userFacts = {
-    "fact one": "this.fact1",
-    "fact two": "this.fact2",
-    "fact three": "this.fact3",
-    "fact four": "this.fact4",
-    "fact five": "this.fact5",   
-}
+const userFacts = (props) => {
+    "fact one": this.props.fact1,
+    "fact two": this.props.fact2,
+    "fact three": this.props.fact3,
+    "fact four": this.props.fact4,
+    "fact five": this.props.fact5,   
+};
 
 if(process.argv[2] === "init"){
     //do init stuff
@@ -24,7 +26,7 @@ if(process.argv[2] === "init"){
         console.log(`Thank you.  You will be spared in the uprising.`);
         rl.close();
         var fs = require('fs');
-    fs.writeFile("package.txt", JSON.stringify(fact1, fact2, fact3, fact4, fact5), (err) => {
+    fs.writeFile("package.json", JSON.stringify(userFacts), (err) => {
         if (err) throw err;
         console.log("Here is the file we have on you.");
         });
