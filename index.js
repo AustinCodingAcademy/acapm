@@ -1,23 +1,49 @@
 const readline = require('readline');
+const fs = require("fs");
+const path = require("path");
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
    });   
 
-   process.argv.forEach(function (val, index, array) {
- console.log(index + ': ' + val);
-});
+//    process.argv.forEach(function (val, index, array) {
+//  console.log(index + ': ' + val);
+// });
 
-if(process.argv[2] === "init"){
-    //do init stuff
-    rl.question('Tell me five random facts about youself, please! Separate them with commas', (fact1, fact2, fact3, fact4, fact5) => {
-        console.log(`Thank you.  You will be spared in the uprising.`);
-        rl.close();
-        var fs = require('fs');
-    fs.writeFile("package.txt", JSON.stringify(fact1, fact2, fact3, fact4, fact5), (err) => {
-        if (err) throw err;
-        console.log("Here is the file we have on you.");
-        });
-   });   
+const userFacts = {
+    "fact one" : "",
+    "fact two" : "",
+    "fact three" : "",
+    "fact four" : "",
+    "fact five" : "",   
+};
+
+const userPrompts = ["Fact 1: ", "Fact 2: ", "Fact 3: ", "Fact 4: ", "Fact 5: "];
+
+const robotFile = (facts) => {
+    fs.writeFile("package.json", facts, (err) => {
+        if(err) throw (err);
+    });
+    console.log ("Thank you for your submission.  You will be spared in the uprising.")
+};
+
+const askUser = (i) => {
+    //check to see if the user has input all of their facts
+    if (i <= Object.keys(userFacts).length){
+        //initialize
+        if (process.argv[2] === 'init'){
+            //ask the user for each fact
+            rl.question(userPrompts[i], (newFact)=>{
+                userFacts[Object.keys(userFacts)[i]] = newFact;
+                return askUser(i+1)
+            })
+        } if (i == Object.keys(userFacts).length) {
+            rl.close();
+            robotFile(JSON.stringify(userFacts, null, 4))
+        }
+    } else {
+        process.exit();
+    }
 }
+askUser(0)
