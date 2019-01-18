@@ -43,7 +43,9 @@ function saveInputs(){
                         jsonPackage.fileInfo.push(a3);
                         jsonPackage.fileInfo.push(a4);
                         jsonPackage.fileInfo.push(a5);
+
                         createJSONfile();
+                        rl.close();
                     });
                 });
             });       
@@ -52,44 +54,9 @@ function saveInputs(){
 };
 
 function createJSONfile(){
-    const stringedInfo = JSON.stringify(jsonPackage.fileInfo)
+    const stringedInfo = JSON.stringify(jsonPackage)
     var fs = require('fs');
     fs.appendFile("package.json", stringedInfo, (err) => {
         if (err) throw err;
     });
 }
-
-
-
-
-
-
-
-
-// function runInitialInit(){
-//     rl.question('Give input',(answer)=>{
-//         sendToCreateFile(answer);
-//     });     
-// };
-
-// function runOtherInits(){
-//     rl.question('Give input',(answer)=>{
-//         sendToAppendFile(answer);
-//     }); 
-// };
-
-// function sendToCreateFile(answer){
-//     var fs = require('fs');
-//     fs.writeFile("package.json", answer, (err) => {
-//         if (err) throw err;
-//     });
-// };
-
-// function sendToAppendFile(answer){
-//     let createFile = [];
-//     createFile.push(answer);
-//     var fs = require('fs');
-//     fs.appendFile("package.json", createFile, (err) => {
-//         if (err) throw err;
-//     });
-// }
