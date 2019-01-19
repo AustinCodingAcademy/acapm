@@ -14,7 +14,7 @@ const jsonPackage = {
 rl.question('Type "init" ',(answer)=>{
     let splitAnswer = answer.split(' ');
     if(checkForInit(splitAnswer) && fileDoesNOTExist()){
-        saveInputs();
+        sendToJSON();
     }else rl.close();
 });
 
@@ -26,13 +26,7 @@ function fileDoesNOTExist(){
     return true; //for now
 };
 
-// function saveInputs(){
-//     rl.question('Give input: ',(answer)=>{
-//         jsonPackage.fileInfo.push(answer);
-//     });
-// }
-
-function saveInputs(){
+function sendToJSON(){
     rl.question('Give input: ',(a1)=>{
         rl.question('Give input: ',(a2)=>{
             rl.question('Give input: ',(a3)=>{
@@ -43,7 +37,6 @@ function saveInputs(){
                         jsonPackage.fileInfo.push(a3);
                         jsonPackage.fileInfo.push(a4);
                         jsonPackage.fileInfo.push(a5);
-
                         createJSONfile();
                         rl.close();
                     });
