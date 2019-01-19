@@ -12,15 +12,10 @@ const jsonPackage = {
 }
 
 rl.question('Type "init" ',(answer)=>{
-    let splitAnswer = answer.split(' ');
-    if(checkForInit(splitAnswer) && fileDoesNOTExist()){
+    if(answer === 'init' && fileDoesNOTExist()){
         sendToJSON();
     }else rl.close();
 });
-
-function checkForInit(firstWord){
-    return firstWord[0] === 'init';
-};
 
 function fileDoesNOTExist(){
     return true; //for now
