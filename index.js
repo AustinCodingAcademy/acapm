@@ -8,7 +8,11 @@ const rl = readline.createInterface({
 });
 
 const jsonPackage = {
-    fileInfo: []
+    input1: '',
+    input2: '',
+    input3: '',
+    input4: '',
+    input5: '',
 }
 
 rl.question('Type "init" ',(answer)=>{
@@ -27,11 +31,11 @@ function sendToJSON(){
             rl.question('Give input: ',(a3)=>{
                 rl.question('Give input: ',(a4)=>{
                     rl.question('Give input: ',(a5)=>{
-                        jsonPackage.fileInfo.push(a1);
-                        jsonPackage.fileInfo.push(a2);
-                        jsonPackage.fileInfo.push(a3);
-                        jsonPackage.fileInfo.push(a4);
-                        jsonPackage.fileInfo.push(a5);
+                        jsonPackage.input1 = a1;
+                        jsonPackage.input2 = a2;
+                        jsonPackage.input3 = a3;
+                        jsonPackage.input4 = a4;
+                        jsonPackage.input5 = a5;
                         createJSONfile();
                         rl.close();
                     });
