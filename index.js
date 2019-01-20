@@ -1,6 +1,7 @@
 "use strict";
 
 const readline = require('readline');
+const fs = require('fs');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -16,13 +17,15 @@ const jsonPackage = {
 }
 
 rl.question('Type "init" ',(answer)=>{
+    //first input must be init and package.json should not exist ... yet
     if(answer === 'init' && fileDoesNOTExist()){
         sendToJSON();
     }else rl.close();
 });
 
 function fileDoesNOTExist(){
-    return true; //for now
+    //check to see if package.json exists - if it does, return false to stop rl, else run program
+    return !(fs.existsSync('package.json'))
 };
 
 function sendToJSON(){
@@ -46,8 +49,8 @@ function sendToJSON(){
 };
 
 function createJSONfile(){
+    //stringify the json object then create the file
     const stringedInfo = JSON.stringify(jsonPackage)
-    var fs = require('fs');
     fs.appendFile("package.json", stringedInfo, (err) => {
         if (err) throw err;
     });
