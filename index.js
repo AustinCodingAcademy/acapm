@@ -62,10 +62,11 @@ const askQuestionsGetAnswers = () => {
 // Creates JSONfile based upon users answers to questions.  Its called within the recursive function typeQuestion
 const writeJSONfile = (answers) => {
     const answersToJSON = JSON.stringify(answers);
-    fs.writeFileSync(path,answersToJSON,(err) => {
+    fs.writeFile(path,answersToJSON, (err) => {
         if (err) throw err;
+        console.log('Saved information');
+        rl.close();
     })
-    rl.close(); 
  }
 
 
