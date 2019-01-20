@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const readline = require('readline');
+var waterfall = require("async/waterfall");
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -27,3 +28,24 @@ if(process.argv[2] === "init"){
         })
     })
 }
+
+
+// waterfall([
+//     function(callback) {
+//         rl.question('What is your favorite food1? ', (answer) => {
+//             callback(null, answer)
+//         })
+//     },
+//     function(answer, callback) {
+//         rl.question('What is your favorite food2? ', (answer) => {
+//             callback(null, answer)
+//         })
+//     },
+//     function(arg1, callback) {
+//         rl.question('What is your favorite food3? ', (answer) => {
+//             callback(null, answer)
+//         })
+//     }
+// ], function (err, result) {
+//     console.log(result)
+// });
