@@ -10,11 +10,9 @@ var userInputs = {inputs : []};
 
 let val = '';
 
-//process.argv.forEach(function (val, index, array) {
 for (let index = 2; index < process.argv.length; index++) {
 
     val = process.argv[index];
-    //console.log(index + ': ' + val);
 
     if (val != 'init') {
         console.log('Terminating the program...');
@@ -39,7 +37,6 @@ for (let index = 2; index < process.argv.length; index++) {
                             return console.log(err);
                         }
                     });
-
                     rl.close();
                 }
                 commandCounter += 1;
