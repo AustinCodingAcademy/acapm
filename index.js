@@ -9,24 +9,27 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+// function that checks if JSON file 'package.json' exists
 const checkForNoJson = () => {;
     return !fs.existsSync(path);
 }
-// const findJson = require('./package.json');
 
+
+// function to check if users first input is init
 const checkForInit = (init) => {
     return init === 'init';
 }
 
+// function that stores two objects(questions, user answers), and includes a recursive function that asks the user 5 questions
 const askQuestionsGetAnswers = () => {
    
-    // objects to ask questions and store user replies
+    // object to ask questions 
     const questions = {
-        question1: 'Name ?',
-        question2: 'Gender ?',
-        question3: 'Religous affiliation ?',
-        question4: 'Burdesome Secret ?',
-        question5: 'Cartoon Character lookalike ?'
+        question1: 'Name?: ',
+        question2: 'Gender?: ',
+        question3: 'Religous affiliation?: ',
+        question4: 'Burdesome Secret?: ',
+        question5: 'Cartoon Character lookalike?: '
     }
 
     // object to store user answers for JSON File
@@ -70,7 +73,7 @@ const writeJSONfile = (answers) => {
  }
 
 
-rl.question('What do you want ', (init) => {
+rl.question('', (init) => {
     if(checkForInit(init)) {
         if(checkForNoJson()) {
             askQuestionsGetAnswers();
