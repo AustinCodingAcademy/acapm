@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "console": "integratedTerminal",
-            "args": ["int","install","public"],
+            "args": ["init","install","public"],
             "program": "${workspaceFolder}/index.js"
         },
         {
