@@ -37,7 +37,7 @@ rl.question("input number 1 ", (input1) => {
           const jsonString= JSON.stringify(obj);
           fs.writeFile("package.json", jsonString, function (err) {
             if (err) throw err;
-            console.log('Saved!');
+            console.log('Already Saved!');
           })
 
           return rl.close()
